@@ -78,6 +78,15 @@ The `t-on` directive allows to prebind its arguments. For example,
 Here, `expr` is a valid Owl expression, so it could be `true` or some variable
 from the rendering context.
 
+### Type Hinting
+You could also indicate your payload type to enforce your typings. You will see typing errors while developing and resolve it even before it's deployed.
+```typescript
+this.trigger<MyCustomPayload>('my-custom-event', payload);
+```
+```typescript
+myCustomEventHandler(ev: OwlEvent<MyCustomPayload>) { ... }
+```
+
 ## Inline Event Handlers
 
 One can also directly specify inline statements. For example,
